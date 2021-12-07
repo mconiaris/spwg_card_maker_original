@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'wrestlers/index'
+  root 'wrestlers#index'
 
   get 'wrestlers/index'
 

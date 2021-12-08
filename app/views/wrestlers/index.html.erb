@@ -1,21 +1,38 @@
 <h1>Wrestlers#index</h1>
-<ul>
+<table>
+  <tr>
+    <th></th>
+      <tr>name</tr>
+      <tr>set</tr>
+      <tr>pri_s</tr>
+      <tr>pri_tt</tr>
+      <tr>tt</tr>
+      <tr>card_rating</tr>
+      <tr>oc_prob</tr>
+      <tr>total_points</tr>
+      <tr>dq_prob</tr>
+      <tr>pa_prob</tr>
+      <tr>sub_prob</tr>
+      <tr>xx_prob</tr>
+      <tr>submission</tr>
+      <tr>tag_team_save</tr>
+  </tr>
   <% @wrestlers.each do |wrestler| %>
-    <li>
-      <%= wrestler.name %>
-      <%= wrestler.set %>
-      <%= wrestler.pri_s %>
-      <%= wrestler.pri_tt %>
-      <%= wrestler.tt %>
-      <%= wrestler.card_rating %>
-      <%= wrestler.oc_prob %>
-      <%= wrestler.total_points %>
-      <%= wrestler.dq_prob %>
-      <%= wrestler.pa_prob %>
-      <%= wrestler.sub_prob %>
-      <%= wrestler.xx_prob %>
-      <%= wrestler.submission %>
-      <%= wrestler.tag_team_save %>
-    </li>
+    <tr>
+        <td><%= wrestler.name %></td>
+        <td><%= wrestler.set %></td>
+        <td><%= wrestler.pri_s %></td>
+        <td><%= wrestler.pri_tt %></td>
+        <td><%= wrestler.tt %></td>
+        <td><%= wrestler.card_rating %></td>
+        <td><%= wrestler.oc_prob %></td>
+        <td><%= wrestler.total_points %></td>
+        <td><%= wrestler.dq_prob %></td>
+        <td><%= wrestler.pa_prob %></td>
+        <td><%= wrestler.sub_prob %></td>
+        <td><%= wrestler.xx_prob %></td>
+        <td><%= wrestler.submission %></td>
+        <td><%= wrestler.tag_team_save %></td>
+    </tr>
   <% end %>
-</ul>
+</table>

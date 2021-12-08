@@ -18,7 +18,7 @@
   </tr>
   <% @wrestlers.each do |wrestler| %>
     <tr>
-        <td><%= wrestler.name %></td>
+        <td><%= wrestler.name.last(8) %></td>
         <td><%= wrestler.set %></td>
         <td><%= wrestler.pri_s %></td>
         <td><%= wrestler.pri_tt %></td>

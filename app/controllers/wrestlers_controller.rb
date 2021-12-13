@@ -4,6 +4,6 @@ class WrestlersController < ApplicationController
   end
 
   def show
-    @Wrestler = Wrestler.find(params[:id])
+    @wrestler = Wrestler.find(params[:id])
   end
 end

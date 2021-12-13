@@ -18,7 +18,7 @@
   </tr>
   <% @wrestlers.each do |wrestler| %>
     <tr>
-        <td><%= wrestler.name.last(8) %></td>
+        <td><a href="/wrestlers/<%= wrestler.id %>"><%= wrestler.name.last(8) %></a></td>
         <td><%= wrestler.set %></td>
         <td><%= wrestler.prioritys %></td>
         <td><%= wrestler.priorityt %></td>

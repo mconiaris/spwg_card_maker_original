@@ -18,7 +18,7 @@
   </tr>
   <% @wrestlers.each do |wrestler| %>
     <tr>
-        <td><%= link_to wrestler.name.last(8), wrestler %></td>
+        <td><%= link_to wrestler.displayname, wrestler %></td>
         <td><%= wrestler.set %></td>
         <td><%= wrestler.prioritys %></td>
         <td><%= wrestler.priorityt %></td>

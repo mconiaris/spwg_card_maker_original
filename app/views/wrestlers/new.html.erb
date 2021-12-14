@@ -1,0 +1,14 @@
+<h1>New Wrestler</h1>
+
+<%= form_with model: @wrestler do |form| %>
+	<div>
+		<%= form.label :name %><br>
+		<%= form.text_field :name %>
+	</div>
+
+	<!-- TODO: Add other stuff here. -->
+
+	<div>
+		<%= form.submit %>
+	</div>
+<% end %>

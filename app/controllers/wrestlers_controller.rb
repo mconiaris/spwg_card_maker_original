@@ -11,8 +11,9 @@ class WrestlersController < ApplicationController
     @wrestler = Wrestler.new
   end
 
+  # TODO: Add dummy values
   def create
-    @wrestler = Wrestler.new
+    @wrestler = Wrestler.new()
 
     if @wrestler.save
       redirect_to @wrestler

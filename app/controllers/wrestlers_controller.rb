@@ -22,5 +22,11 @@ class WrestlersController < ApplicationController
     end
   end
 
+  private
+
+  def article_params
+    params.require(:wrestler).permit(:name)
+  end
+
 
 end

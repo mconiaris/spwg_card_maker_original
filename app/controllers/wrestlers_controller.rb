@@ -13,7 +13,7 @@ class WrestlersController < ApplicationController
 
   # TODO: Add dummy values
   def create
-    @wrestler = Wrestler.new()
+    @wrestler = Wrestler.new(wrestler_params)
 
     if @wrestler.save
       redirect_to @wrestler
@@ -24,7 +24,7 @@ class WrestlersController < ApplicationController
 
   private
 
-  def article_params
+  def wrestler_params
     params.require(:wrestler).permit(:name)
   end
 

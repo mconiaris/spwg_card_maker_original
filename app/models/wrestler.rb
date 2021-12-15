@@ -1,3 +1,3 @@
 class Wrestler < ApplicationRecord
-	validates :displayname, prescence, true
+	validates :name, prescence, true
 end

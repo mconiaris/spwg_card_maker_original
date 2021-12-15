@@ -22,6 +22,16 @@ class WrestlersController < ApplicationController
     end
   end
 
+  def edit
+    @wrestler = Wrestler.find(params[:id])
+
+    if @wrestler.update(wrestler_params)
+      redirect_to @wrestler
+    else
+      render :edit
+    end
+  end
+
   private
 
   def wrestler_params

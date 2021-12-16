@@ -281,9 +281,25 @@
     <% end %>
 	</div>
 
+<div>
+		<%= form.label :prioritys %><br>
+		<%= form.text_field :prioritys %>
+		<% @wrestler.errors.full_messages_for(:prioritys).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+	</div>
+
+	<div>
+		<%= form.label :priorityt %><br>
+		<%= form.text_field :priorityt %>
+		<% @wrestler.errors.full_messages_for(:priorityt).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+	</div>
+
 
 	<!-- TODO: Add other stuff here. -->
-# <!-- PriorityS,	PriorityT,OC02,OC03,OC04,OC05,OC06,OC07,OC08,OC09,OC10,OC11,OC12,RO02,RO03,RO04,RO05,RO06,RO07,RO08,RO09,RO10,RO11,RO12,	SetA, TT, Card Rating,oc_prob,total_points,dq_prob,pa_prob,sub_prob,xx_prob,submission,tag_team_save,,SubY,TagX,TagY,,Division -->
+# <!-- PriorityS,	PriorityT,OC02,OC03,OC04,OC05,OC06,OC07,OC08,OC09,OC10,OC11,OC12,RO02,RO03,RO04,RO05,RO06,RO07,RO08,RO09,RO10,RO11,RO12, Division -->
 
 	<div>
 		<%= form.submit %>

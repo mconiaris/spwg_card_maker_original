@@ -1,9 +1,9 @@
-# <!-- PriorityS,	PriorityT,OC02,OC03,OC04,OC05,OC06,OC07,OC08,OC09,OC10,OC11,OC12,RO02,RO03,RO04,RO05,RO06,RO07,RO08,RO09,RO10,RO11,RO12,	SetA, TT, Card Rating,oc_prob,total_points,dq_prob,pa_prob,sub_prob,xx_prob,submission,tag_team_save,Division -->
+# <!-- OC02,OC03,OC04,OC05,OC06,OC07,OC08,OC09,OC10,OC11,OC12,RO02,RO03,RO04,RO05,RO06,RO07,RO08,RO09,RO10,RO11,RO12,	SetA, TT, Card Rating,oc_prob,total_points,dq_prob,pa_prob,sub_prob,xx_prob,submission,tag_team_save,Division -->
 # TODO: Dry out inclusion validations
 class Wrestler < ApplicationRecord
 	validates :name, :gc02, :gc03, :gc04, :gc05, :gc06, :gc07, :gc08, :gc09, :gc10, 
 		:gc11, :gc12, :specialty, :s1, :s2, :s3, :s4, :s5, :s6, :subx, :suby, :tagx,
-		:tagy, presence: true
+		:tagy, :prioritys,	:priorityt, presence: true
 
 	validates :gc02, :gc03, :gc04, :gc05, :gc06, :gc07, :gc08, :gc09, :gc10, 
 		:gc11, :gc12, inclusion: { in: %w(OC OC/TT DC), message: 
@@ -14,11 +14,19 @@ class Wrestler < ApplicationRecord
 			"%{value} can only be A, B, C in capital letters or \"Reverse\" (same case)."
 		}
 
+	validates :prioritys, inclusion: { in: %w(1 2 3 4 5 5+), message: 
+			"Singles Priority can only be 1, 2, 3, 4, 5, 5+"
+		}
+
+	validates :priorityt, inclusion: { in: %w(1 2 3 3+), message: 
+			"Tag Team Priority can only be 1 2 3 or 3+"
+		}
+
 	validates :specialty, length: { minimum: 2 }
 
 	validates :s1, :s2, :s3, :s4, :s5, :s6, length: { maximum: 6 }
 
-	validates :subx, :suby, :tagx,:tagy, length: { maximum: 2 }
+	validates :subx, :suby, :tagx,:tagy, :prioritys,	:priorityt, length: { maximum: 2 }
 
 	validates :subx, :suby, :tagx,:tagy, numericality: { only_integer: true }
 	validates :subx, :suby, :tagx,:tagy, numericality: { greater_than: 1 }

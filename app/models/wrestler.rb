@@ -1,9 +1,9 @@
-# <!-- S1,S2,S3,S4,S5,S6,	SubA, SubB, TagA, TagB,	PriorityS,	PriorityT,OC02,OC03,OC04,OC05,OC06,OC07,OC08,OC09,OC10,OC11,OC12,RO02,RO03,RO04,RO05,RO06,RO07,RO08,RO09,RO10,RO11,RO12,	SetA, TT, Card Rating,oc_prob,total_points,dq_prob,pa_prob,sub_prob,xx_prob,submission,tag_team_save,SubX,SubY,TagX,TagY,,Division -->
+# <!-- PriorityS,	PriorityT,OC02,OC03,OC04,OC05,OC06,OC07,OC08,OC09,OC10,OC11,OC12,RO02,RO03,RO04,RO05,RO06,RO07,RO08,RO09,RO10,RO11,RO12,	SetA, TT, Card Rating,oc_prob,total_points,dq_prob,pa_prob,sub_prob,xx_prob,submission,tag_team_save,Division -->
 # TODO: Dry out inclusion validations
 class Wrestler < ApplicationRecord
 	validates :name, :gc02, :gc03, :gc04, :gc05, :gc06, :gc07, :gc08, :gc09, :gc10, 
-		:gc11, :gc12, :specialty, :s1, :s2, :s3, :s4, :s5, :s6, :subx, :suby, 
-		presence: true
+		:gc11, :gc12, :specialty, :s1, :s2, :s3, :s4, :s5, :s6, :subx, :suby, :tagx,
+		:tagy, presence: true
 
 	validates :gc02, :gc03, :gc04, :gc05, :gc06, :gc07, :gc08, :gc09, :gc10, 
 		:gc11, :gc12, inclusion: { in: %w(OC OC/TT DC), message: 
@@ -18,11 +18,11 @@ class Wrestler < ApplicationRecord
 
 	validates :s1, :s2, :s3, :s4, :s5, :s6, length: { maximum: 6 }
 
-	validates :subx, :suby, length: { maximum: 2 }
+	validates :subx, :suby, :tagx,:tagy, length: { maximum: 2 }
 
-	validates :subx, :suby, numericality: { only_integer: true }
-	validates :subx, :suby, numericality: { greater_than: 1 }
-	validates :subx, :suby, numericality:  { less_than_or_equal_to: 12 }
+	validates :subx, :suby, :tagx,:tagy, numericality: { only_integer: true }
+	validates :subx, :suby, :tagx,:tagy, numericality: { greater_than: 1 }
+	validates :subx, :suby, :tagx,:tagy, numericality:  { less_than_or_equal_to: 12 }
 
 	attribute :tt, :float, default: 0.0
 	attribute :card_rating, :float, default: 0.0

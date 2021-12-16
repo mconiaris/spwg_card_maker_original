@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_11_171423) do
+ActiveRecord::Schema.define(version: 2021_12_16_210129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 2021_12_11_171423) do
     t.string "subb"
     t.string "taga"
     t.string "tagb"
-    t.integer "prioritys"
-    t.integer "priorityt"
+    t.string "prioritys"
+    t.string "priorityt"
     t.string "oc02"
     t.string "oc03"
     t.string "oc04"

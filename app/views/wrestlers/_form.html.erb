@@ -7,6 +7,14 @@
     <% end %>
 	</div>
 
+	<div>
+		<%= form.label :GC02 %><br>
+		<%= form.text_field :gc92 %>
+		<% @wrestler.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+	</div>
+
 	<!-- TODO: Add other stuff here. -->
 
 	<div>

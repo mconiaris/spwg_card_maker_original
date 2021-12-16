@@ -24,12 +24,6 @@ class WrestlersController < ApplicationController
 
   def edit
     @wrestler = Wrestler.find(params[:id])
-
-    if @wrestler.update(wrestler_params)
-      redirect_to @wrestler
-    else
-      render :edit
-    end
   end
 
   def update
@@ -52,7 +46,7 @@ class WrestlersController < ApplicationController
   private
 
   def wrestler_params
-    params.require(:wrestler).permit(:name)
+    params.require(:wrestler).permit(:name, :displayname, :gc02)
   end
 
 

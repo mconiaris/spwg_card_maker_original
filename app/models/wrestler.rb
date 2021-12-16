@@ -3,8 +3,19 @@
 class Wrestler < ApplicationRecord
 	validates :name, presence: true
 
-	validates :gc02, inclusion: {
-		in: %w(OC OC/TT DC),
-		message: "%{value} must be OC, OC/TT or DC"
-	}
+	validates :gc02, inclusion: { in: %w(OC OC/TT DC),
+			message: "%{value} can only be OC, OC/TT or DC in capital letters."
+		}
+	validates :gc02, presence: true
+
+		attribute :tt, :float, default: 0.0
+		attribute :card_rating, :float, default: 0.0
+		attribute :oc_prob, :float, default: 0.0
+		attribute :total_points, :float, default: 0.0
+		attribute :dq_prob, :float, default: 0.0
+		attribute :pa_prob, :float, default: 0.0
+		attribute :sub_prob, :float, default: 0.0
+		attribute :xx_prob, :float, default: 0.0
+		attribute :submission, :float, default: 0.0
+		attribute :tag_team_save, :float, default: 0.0
 end

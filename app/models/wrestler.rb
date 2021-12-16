@@ -35,7 +35,8 @@ class Wrestler < ApplicationRecord
 	validates :subx, :suby, :tagx,:tagy, numericality: { less_than_or_equal_to: 12 }
 
 	validates :oc02, :oc03, :oc04, :oc05, :oc06, :oc07, :oc08, :oc09, :oc10,
-		:oc11, :oc12, length: { minimum: 4 }
+		:oc11, :oc12, :ro02, :ro03, :ro04, :ro05, :ro06, :ro07, :ro08, :ro09, :ro10,
+		:ro11, :ro12, length: { minimum: 4 }
 
 	attribute :tt, :float, default: 0.0
 	attribute :card_rating, :float, default: 0.0

@@ -46,7 +46,8 @@ class WrestlersController < ApplicationController
   private
 
   def wrestler_params
-    params.require(:wrestler).permit(:name, :displayname, :gc02)
+    params.require(:wrestler).permit(:name, :displayname, :gc02, :gc03, :gc04, 
+      :gc05, :gc06, :gc07, :gc08, :gc09, :gc10, :gc11, :gc12)
   end
 
 

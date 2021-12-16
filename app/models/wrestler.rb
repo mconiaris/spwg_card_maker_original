@@ -2,7 +2,8 @@
 # TODO: Dry out inclusion validations
 class Wrestler < ApplicationRecord
 	validates :name, :gc02, :gc03, :gc04, :gc05, :gc06, :gc07, :gc08, :gc09, :gc10, 
-		:gc11, :gc12, :specialty, :s1, :s2, :s3, :s4, :s5, :s6, presence: true
+		:gc11, :gc12, :specialty, :s1, :s2, :s3, :s4, :s5, :s6, :subx, :suby, 
+		presence: true
 
 	validates :gc02, :gc03, :gc04, :gc05, :gc06, :gc07, :gc08, :gc09, :gc10, 
 		:gc11, :gc12, inclusion: { in: %w(OC OC/TT DC), message: 
@@ -16,6 +17,12 @@ class Wrestler < ApplicationRecord
 	validates :specialty, length: { minimum: 2 }
 
 	validates :s1, :s2, :s3, :s4, :s5, :s6, length: { maximum: 6 }
+
+	validates :subx, :suby, length: { maximum: 2 }
+
+	validates :subx, :suby, numericality: { only_integer: true }
+	validates :subx, :suby, numericality: { greater_than: 1 }
+	validates :subx, :suby, numericality:  { less_than_or_equal_to: 12 }
 
 	attribute :tt, :float, default: 0.0
 	attribute :card_rating, :float, default: 0.0

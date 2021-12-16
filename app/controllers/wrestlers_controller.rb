@@ -49,7 +49,7 @@ class WrestlersController < ApplicationController
     params.require(:wrestler).permit(:name, :displayname, :gc02, :gc03, :gc04, 
       :gc05, :gc06, :gc07, :gc08, :gc09, :gc10, :gc11, :gc12, :dc02, :dc03, :dc04, 
       :dc05, :dc06, :dc07, :dc08, :dc09, :dc10, :dc11, :dc12, :specialty, :s1, :s2, 
-      :s3, :s4, :s5, :s6)
+      :s3, :s4, :s5, :s6, :subx, :suby)
   end
 
 

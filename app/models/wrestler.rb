@@ -1,4 +1,3 @@
-# <!-- OC02,OC03,OC04,OC05,OC06,OC07,OC08,OC09,OC10,OC11,OC12,RO02,RO03,RO04,RO05,RO06,RO07,RO08,RO09,RO10,RO11,RO12,	SetA, TT, Card Rating,oc_prob,total_points,dq_prob,pa_prob,sub_prob,xx_prob,submission,tag_team_save,Division -->
 # TODO: Dry out inclusion validations
 # TODO: Custom validations for OC and Ropes - https://guides.rubyonrails.org/active_record_validations.html#performing-custom-validations
 class Wrestler < ApplicationRecord
@@ -48,4 +47,9 @@ class Wrestler < ApplicationRecord
 	attribute :xx_prob, :float, default: 0.0
 	attribute :submission, :float, default: 0.0
 	attribute :tag_team_save, :float, default: 0.0
+
+	def calculate_card_rating
+		100
+	end
+
 end
